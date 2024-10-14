@@ -1,0 +1,32 @@
+.container {
+  background-color: #1B2432;
+  width: 330px;
+  height: 298px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+h1 { 
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.correctAnswers {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.score {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+button {
+  width : 160px;
+  height: 42px;
+  color: white;
+  background-image: linear-gradient(to right ,#A855F6 , #EB489A);
+  border: none;
+  border-radius: 5px;
+}

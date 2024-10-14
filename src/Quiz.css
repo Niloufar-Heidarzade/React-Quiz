@@ -1,0 +1,61 @@
+.quizContainer {
+  background-color: #1B2432;
+  width: 600px;
+  padding: 40px;
+}
+h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.progressBarContainer  {
+  background-color: #2B3544;
+  width: 520px;
+  height: 14px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.progressBar {
+  background-image: linear-gradient(to right ,#A855F6 , #EB489A);
+  height: 14px;
+  border-radius: 15px;
+}
+.questionNumber {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+h3 {
+ font-weight: 700;
+ font-size: 24px;
+ margin-bottom: 20px;
+}
+li {
+  background-color: #2B3544;
+  margin-bottom: 20px;
+  list-style: none;
+  width: 520px;
+  height: 42px;
+  padding: 13px 14px 13px 14px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.timerAndButtonDiv {
+  margin-top: 40px;
+  width: 520px;
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0px 12px 0px;
+}
+.timer {
+  font-weight: 500;
+  font-size: 16px;
+}
+.quitBtn {
+  width : 160px;
+  height: 42px;
+  color: white;
+  background-image: linear-gradient(to right ,#A855F6 , #EB489A);
+  border: none;
+  border-radius: 5px;
+}

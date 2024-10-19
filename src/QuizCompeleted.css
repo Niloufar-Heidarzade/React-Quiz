@@ -1,4 +1,4 @@
-.container {
+.completeContainer {
   background-color: #1B2432;
   width: 330px;
   height: 298px;
@@ -7,7 +7,7 @@
   align-items: center;
   padding: 40px;
 }
-h1 { 
+.completeContainer h1 { 
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 40px;
@@ -22,7 +22,7 @@ h1 {
   font-size: 16px;
   margin-bottom: 40px;
 }
-button {
+.completeContainer button {
   width : 160px;
   height: 42px;
   color: white;

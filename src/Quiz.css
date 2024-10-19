@@ -3,7 +3,7 @@
   width: 600px;
   padding: 40px;
 }
-h1 {
+.quizContainer h1 {
   font-size: 32px;
   margin-bottom: 40px;
 }
@@ -24,12 +24,12 @@ h1 {
   font-size: 14px;
   margin-bottom: 40px;
 }
-h3 {
+.quizContainer h3 {
  font-weight: 700;
  font-size: 24px;
  margin-bottom: 20px;
 }
-li {
+.listOfOptions li {
   background-color: #2B3544;
   margin-bottom: 20px;
   list-style: none;

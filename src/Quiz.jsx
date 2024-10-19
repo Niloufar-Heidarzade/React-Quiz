@@ -1,12 +1,15 @@
 import "./Quiz.css";
 import reactQuiz from "./data/reactQuiz";
-import {useState , useEffect} from "react"
+import vueQuiz from "./data/vueQuiz";
+import angularQuiz from "./data/angularQuiz";
+import svelteQuiz from "./data/svelteQuiz";
+import {useState , useEffect} from "react";
 
-function Quiz({handleQuit , handleComplete , handleCorrectAnswer , handleScore}) {
-
+function Quiz({handleQuit , handleComplete , handleCorrectAnswer , handleScore , quizTopic , quizLevel}) {
+  const questionsData = quizTopic==="react"?reactQuiz:quizTopic==="vue"?vueQuiz:quizTopic==="angular"?angularQuiz:quizTopic==="svelte"?svelteQuiz:null;
   const [count , setCount] = useState(1);
   const[isAnswered , setIsAnswered] = useState(false);
-  const [timer , setTimer] = useState(600);
+  const [timer , setTimer] = useState(quizLevel===1?600:quizLevel===2?420:quizLevel===3?300:600);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,10 +37,10 @@ function Quiz({handleQuit , handleComplete , handleCorrectAnswer , handleScore})
 
   function checkAnswer (e , optionNumber) {
     setIsAnswered(true);
-    if(reactQuiz[count-1].options[optionNumber].isCorrect) {
+    if(questionsData[count-1].options[optionNumber].isCorrect) {
       e.target.style.backgroundImage = "linear-gradient(to right , #008B8B , #32DE84)";
       handleCorrectAnswer();
-      handleScore(reactQuiz[count-1].score);
+      handleScore(questionsData[count-1].score);
     } else {
       e.target.style.backgroundImage = "linear-gradient(to right , #FF033E , #FD5C63)";
     }
@@ -59,17 +62,17 @@ function Quiz({handleQuit , handleComplete , handleCorrectAnswer , handleScore})
 
   return (
     <section className = "quizContainer">
-      <h1>⚛️ The React Quiz</h1>
+      <h1>{quizTopic==="react"?"⚛️The React Quiz":quizTopic==="vue"?"✌️The Vue Quiz":quizTopic==="angular"?"🅰️The Angular Quiz":quizTopic==="svelte"?"🔥The Svelte Quiz":"The Quiz"}</h1>
       <div className = "progressBarContainer">
         <div className = "progressBar" style={{width: `${(count / 15) * 100}%`}}></div>
       </div>
       <p className="questionNumber">Question {count}/15</p>
-      <h3>{reactQuiz[count-1].question}</h3>
-      <ul>
-        <li onClick = {(e) => !isAnswered && checkAnswer(e , 0)}>{reactQuiz[count-1].options[0].text}</li>
-        <li onClick = {(e) => !isAnswered && checkAnswer(e , 1)}>{reactQuiz[count-1].options[1].text}</li>
-        <li onClick = {(e) => !isAnswered && checkAnswer(e , 2)}>{reactQuiz[count-1].options[2].text}</li>
-        <li onClick = {(e) => !isAnswered && checkAnswer(e , 3)}>{reactQuiz[count-1].options[3].text}</li>
+      <h3>{questionsData[count-1].question}</h3>
+      <ul className="listOfOptions">
+        <li onClick = {(e) => !isAnswered && checkAnswer(e , 0)}>{questionsData[count-1].options[0].text}</li>
+        <li onClick = {(e) => !isAnswered && checkAnswer(e , 1)}>{questionsData[count-1].options[1].text}</li>
+        <li onClick = {(e) => !isAnswered && checkAnswer(e , 2)}>{questionsData[count-1].options[2].text}</li>
+        <li onClick = {(e) => !isAnswered && checkAnswer(e , 3)}>{questionsData[count-1].options[3].text}</li>
       </ul>
       <div className = "timerAndButtonDiv">
         <p className="timer">Time left: {formatTime(timer)}</p>

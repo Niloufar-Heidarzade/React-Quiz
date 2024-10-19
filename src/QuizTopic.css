@@ -1,0 +1,29 @@
+.wholeContainer {
+  width: 600px;
+  height: 437px;
+  background-color: #1B2432;
+  padding: 40px;
+  border-radius: 8px;
+}
+.topicH1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.topicContainer {
+  width: 520px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.topic { 
+  background-color: #2B3544;
+  width: 240px;
+  height: 120px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
